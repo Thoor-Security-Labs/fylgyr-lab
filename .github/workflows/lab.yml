@@ -1,11 +1,16 @@
 name: lab
+
 on:
-push:
-branches: [ "main" ]
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
 jobs:
-ci:
-runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@v4
-- uses: stefanzweifel/git-auto-commit-action@v5.0.0
-- run: echo "hello"
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5.0.0
+      - run: echo "hello"
